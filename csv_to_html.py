@@ -16,11 +16,12 @@ def generate_html(input_file_path, output_file_path=None, row=1):
         interested_line = next(itertools.islice(reader, row-1, None))
         html_content = ""
         for title, response in zip(header, interested_line):
-            html_content += f"""
-<h3>{title}</h3>
-<br/>
-<pre>{response}</pre>
-"""
+            if response:
+                html_content += f"""
+    <h3>{title}</h3>
+    <br/>
+    <pre>{response}</pre>
+    """
 
         if output_file_path is None:
             print(html_content)
