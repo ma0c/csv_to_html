@@ -1,5 +1,9 @@
 .idea
 *.csv
 *.html
+__pycache__
+csv_to_html.spec
+dist
+build
 
 csv_to_html_venv
